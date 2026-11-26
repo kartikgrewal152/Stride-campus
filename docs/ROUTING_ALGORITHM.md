@@ -1,6 +1,7 @@
 # Stride Routing Algorithm Specification
 
-**Module:** `src/lib/campusData.js`  
+**Module 1 algorithm:** `src/app/backend/module-1/pathfinding.js`  
+**Module 2 graph data:** `src/app/backend/module-2/campusData.js`  
 **Architect:** Pravesh (Reg. No. 12419500) — Team Lead & Core Engine Architect  
 **Project:** Stride — Accessible Campus Movement & Navigation System  
 **Institution:** Lovely Professional University (Punjab)

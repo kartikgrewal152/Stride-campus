@@ -32,7 +32,7 @@
                                     |
 +--------------------------------------------------------------------------+
 |                           Core Business Logic                            |
-|  - Weighted Dijkstra Solver (src/lib/campusData.js)                      |
+|  - Weighted Dijkstra Solver (src/app/backend/module-1/pathfinding.js)                      |
 |  - Accessibility Scorecard Normalizer (0-100 Rating Matrix)              |
 |  - Crowdsourced Hazard Aggregator (Local State / Server Actions)         |
 |  - Multi-Tab View Controller (Walkthrough, Panorama, Audits, Satellite)  |
@@ -50,7 +50,7 @@
 
 ## 2. 360° Inspection Engine Architecture
 
-The visual inspection module (`src/components/Campus360Viewer.jsx`) provides pre-trip verification through four synchronized viewing modes:
+The visual inspection module (`src/app/(frontend)/(module-1)/components/Campus360Viewer.jsx`) provides pre-trip verification through four synchronized viewing modes:
 
 1. **Official LPU2 360° Walkthrough**:
    - Integrates `https://iviewd.com/lpu2/` inside a responsive sandboxed iframe with hardware acceleration flags (`accelerometer`, `gyroscope`, `magnetometer`, `vr`, `fullscreen`).

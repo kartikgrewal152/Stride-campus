@@ -23,15 +23,17 @@ Stride solves this through:
 
 ---
 
-## 👥 Engineering Team & Full-Stack Contributions
+## 🧩 Project Modules
 
-All three team members contributed comprehensively to **both Frontend UI development and Backend / Algorithmic engineering**:
+The source is grouped into `(frontend)/(module-1..3)` route groups and `backend/module-1..3` inside `src/app/`. Module 1 owns the tour, profile and routing; Module 2 owns the map and facility directory; Module 3 owns reports, community and the audit dashboard. Existing page URLs stay unchanged. API entry files stay in `src/app/api/` and call their module backend helpers.
 
-| Team Member | Registration No. | Frontend Contributions | Backend & Algorithmic Contributions |
-| :--- | :--- | :--- | :--- |
-| **Pravesh** *(Lead)* | **12419500** | • **360° VR Tour & Panorama Engine** (`src/components/Campus360Viewer.jsx`, `/tour`) with equirectangular canvas, sensor compass HUD, and multi-tab viewer.<br>• **Google OAuth Sign-in Modal & Profile UI** (`src/components/GoogleSignInModal.jsx`, `/profile`).<br>• **Hero Simulation & Navigation Layout** (`src/components/HeroSection.jsx`). | • **Core Dijkstra Pathfinding Algorithm** (`src/lib/pathfinding.js`) with gradient friction, step exclusion, and impedance weighting.<br>• **Dynamic Routing REST API** (`src/app/api/routes/route.js`).<br>• **Google OAuth State Bus & Persistence** (`src/lib/auth.js`). |
-| **Kartik Grewal** | **12406604** | • **2D Interactive SVG Campus Map** (`src/components/CampusMap.jsx`, `/explore`) with zoom/pan vector navigation and dynamic route path highlighting.<br>• **Step-by-Step Route Comparison Cards** (`src/components/RouteCard.jsx`).<br>• **Campus Facility Cards & Filter HUD** (`src/components/BuildingCard.jsx`). | • **Campus Graph & Topological Modeling** (`src/lib/campusData.js`): Mapped 52 facilities & 70+ corridors on a normalized planar coordinate grid.<br>• **Corridor Spatial Distance & Surface Friction Calculator** (`src/lib/utils.js`).<br>• **Facilities Registry REST API** (`src/app/api/buildings/route.js`). |
-| **Konatala Naveen** | **12417251** | • **Barrier Reporting Form with 5MB Photo Upload** (`src/app/report/page.js`) and live card preview confirmation.<br>• **Student Live Wire Community Feed** (`src/app/feed/page.js`, `FeedPost.jsx`) with photo lightbox modal.<br>• **Dynamic 2-Lift Checklist & Photo Proofs** (`src/components/BuildingChecklist.jsx`, `/buildings/[slug]`). | • **Persistent Client Storage Bus & Event Pipeline** (`src/lib/reportsStorage.js`).<br>• **Barrier Ingestion & Verification REST API** (`src/app/api/reports/route.js`).<br>• **Institutional Accessibility Scoring Algorithm** (Ramp 35%, Lift 25%, Door 20%, WC 20%). |
+| Module | Frontend work | Backend work | Presentation level |
+|---|---|---|---|
+| **Module 1 – Tour, Profile & Routing** | Home, 360 tour, profile, sign-in modal and shared navigation | Authentication, weighted pathfinding and `/api/routes` | Tour, session and route flow |
+| **Module 2 – Campus Map & Facilities** | Explore map, route comparison, facility cards and building detail | Campus graph, spatial utilities and `/api/buildings` | Map and facility directory |
+| **Module 3 – Reports, Community & Audit** | Report form, feed, checklists, dashboard score/alert UI | Report service, validation, storage helper, score summary and `/api/reports` | Report-to-dashboard workflow |
+
+Module 3 currently summarizes existing facility scores; the source does not contain a standalone four-factor score formula yet. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the module file tree.
 
 ---
 
@@ -140,3 +142,9 @@ The complete project report and presentation deck are available in the repositor
 ## 📜 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
+
+---
+
+## Source code organization
+
+Inside `src/app/`, pages are grouped under `(frontend)/(module-1..3)` and backend helpers under `backend/module-1..3`, aligned with the presentation ownership split. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the structure.

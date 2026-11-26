@@ -5,7 +5,7 @@
  * @description Weighted Dijkstra pathfinding engine with gradient impedance and step-exclusion filtering.
  */
 
-import { buildings, routes } from "./campusData"
+import { buildings, routes } from "@/lib/campusData"
 
 function buildGraph(accessibleOnly) {
   const graph = {}
@@ -124,4 +124,5 @@ export function getConnectedBuildings(buildingId) {
       barriers: r.barriers
     }))
 }
+
 

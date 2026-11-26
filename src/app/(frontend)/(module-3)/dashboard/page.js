@@ -4,7 +4,8 @@ import AccessibilityScore from "@/components/AccessibilityScore"
 import StatusBadge from "@/components/StatusBadge"
 import DashboardRecentAlerts from "@/components/DashboardRecentAlerts"
 import Link from "next/link"
-import { buildings, getAverageAccessibilityScore } from "@/lib/campusData"
+import { buildings } from "@/lib/campusData"
+import { getCampusScoreSummary } from "@/lib/campusScoreSummary"
 import { getBuildingTypeIcon, getBuildingTypeLabel } from "@/lib/utils"
 import {
   TrendingUp,
@@ -19,10 +20,7 @@ import {
 } from "lucide-react"
 
 export default function DashboardPage() {
-  const avg = getAverageAccessibilityScore()
-  const fully = buildings.filter(b => b.accessibility.score >= 80).length
-  const needsAttn = buildings.filter(b => b.accessibility.score < 50).length
-  const sorted = [...buildings].sort((a, b) => a.accessibility.score - b.accessibility.score)
+  const { average: avg, fullyAccessible: fully, needsAttention: needsAttn, lowestScoresFirst: sorted } = getCampusScoreSummary(buildings)
 
   const statCards = [
     {
@@ -206,3 +204,5 @@ export default function DashboardPage() {
     </div>
   )
 }
+
+

@@ -1,10 +1,11 @@
 export const buildings = [
   {
     id: "block-1",
-    slug: "block-1",
-    name: "Block 1 (Admission & Central Admin)",
-    shortName: "Block 1",
-    type: "administrative",
+  slug: "block-1",
+  name: "Block 1 (Fashion)",
+  shortName: "Block 1 - Fashion",
+  type: "academic",
+  description: "Academic facilities related to fashion studies.",
     floors: 4,
     coordinates: { x: 50, y: 8 },
     accessibility: {
@@ -17,16 +18,16 @@ export const buildings = [
       tactilePath: true,
       brailleSignage: true
     },
-    description: "Main administrative headquarters, Vice Chancellor secretariat, admissions counseling halls, and visitor facilitation centre.",
     barriers: ["Heavy manual double doors at rear entrance"],
     image: null
   },
   {
     id: "block-2",
-    slug: "block-2",
-    name: "Block 2 (Examination Department & Academic Evaluation)",
-    shortName: "Block 2 (Exams)",
-    type: "administrative",
+  slug: "block-2",
+  name: "Block 2 (Baldev Raj Auditorium)",
+  shortName: "Block 2 - Baldev Raj Auditorium",
+  type: "recreation",
+  description: "Auditorium facility used for university events and programs.",
     floors: 4,
     coordinates: { x: 42, y: 12 },
     accessibility: {
@@ -39,16 +40,16 @@ export const buildings = [
       tactilePath: false,
       brailleSignage: false
     },
-    description: "University examination controllers, transcript dispatch wing, grade evaluation facilitation, and confidential student records.",
     barriers: ["Threshold ramp slope exceeds 1:10 at west annex"],
     image: null
   },
   {
     id: "block-3",
-    slug: "block-3",
-    name: "Block 3 (Uni-Hospital & Medical Emergency Wing)",
-    shortName: "Block 3 (Hospital)",
-    type: "medical",
+  slug: "block-3",
+  name: "Block 3 (Uni-Hospital & Medical Emergency Wing)",
+  shortName: "Block 3 (Hospital)",
+  type: "medical",
+  description: "24/7 University Health Centre, emergency medical triage, clinical pharmacy, diagnostic laboratories, and dedicated ramp ambulance entrance.",
     floors: 4,
     coordinates: { x: 32, y: 14 },
     accessibility: {
@@ -61,16 +62,16 @@ export const buildings = [
       tactilePath: true,
       brailleSignage: true
     },
-    description: "24/7 University Health Centre, emergency medical triage, clinical pharmacy, diagnostic laboratories, and dedicated ramp ambulance entrance.",
     barriers: ["Ramp handrail undergoing routine inspection"],
     image: null
   },
   {
     id: "block-4",
-    slug: "block-4",
-    name: "Block 4 (Mechanical & Mechatronics)",
-    shortName: "Block 4",
-    type: "academic",
+  slug: "block-4",
+  name: "Block 4 (Pharmacy)",
+  shortName: "Block 4 - Pharmacy",
+  type: "academic",
+  description: "Academic facilities related to pharmacy studies.",
     floors: 5,
     coordinates: { x: 24, y: 16 },
     accessibility: {
@@ -83,16 +84,15 @@ export const buildings = [
       tactilePath: false,
       brailleSignage: false
     },
-    description: "Robotics test-beds, CAD/CAM simulation stations, thermodynamics laboratories, and faculty offices.",
-    barriers: ["Service elevator down for annual maintenance", "Threshold step at main workshop corridor"],
     image: null
   },
   {
-    id: "block-13",
-    slug: "block-13",
-    name: "Block 13 (Engineering Central Workshops)",
-    shortName: "Block 13",
-    type: "academic",
+     id: "block-13",
+  slug: "block-13",
+  name: "Block 13 (Student Welfare Wing and DSW)",
+  shortName: "Block 13 - Student Welfare",
+  type: "administrative",
+  description: "Student Welfare Wing and Division of Student Welfare (DSW) facilities.",
     floors: 3,
     coordinates: { x: 18, y: 24 },
     accessibility: {
@@ -105,16 +105,16 @@ export const buildings = [
       tactilePath: false,
       brailleSignage: false
     },
-    description: "Heavy carpentry, welding, foundry, fitting shops, and industrial fabrication bays.",
     barriers: ["Crushed gravel pathway at heavy equipment delivery bay", "High 4-inch metal kerb at lathe workshop"],
     image: null
   },
   {
     id: "block-14",
-    slug: "block-14",
-    name: "Block 14 (Automobile & Aerospace Labs)",
-    shortName: "Block 14",
-    type: "academic",
+  slug: "block-14",
+  name: "Block 14 (MSB - Mittal School of Business)",
+  shortName: "Block 14 - MSB",
+  type: "academic",
+  description: "Academic facilities of Mittal School of Business.",
     floors: 3,
     coordinates: { x: 14, y: 30 },
     accessibility: {
@@ -127,16 +127,16 @@ export const buildings = [
       tactilePath: false,
       brailleSignage: false
     },
-    description: "Formula student team garages, wind tunnel simulation room, and internal combustion engine testing bays.",
-    barriers: ["Steep approach slope from vehicle testing track"],
+      barriers: ["Steep approach slope from vehicle testing track"],
     image: null
   },
   {
     id: "block-25",
-    slug: "block-25",
-    name: "Block 25 (School of Pharmaceutical Sciences)",
-    shortName: "Block 25",
-    type: "academic",
+  slug: "block-25",
+  name: "Block 25 (School of Computer Science and Engineering)",
+  shortName: "Block 25 - Computer Science",
+  type: "academic",
+  description: "Academic facilities of the School of Computer Science and Engineering.",
     floors: 5,
     coordinates: { x: 68, y: 15 },
     accessibility: {
@@ -149,16 +149,16 @@ export const buildings = [
       tactilePath: false,
       brailleSignage: true
     },
-    description: "Pharmacology testing labs, sterile preparation suites, clean rooms, and medicinal chemistry facilities.",
-    barriers: ["Fire safety doors between corridors require high opening force"],
+        barriers: ["Fire safety doors between corridors require high opening force"],
     image: null
   },
   {
-    id: "block-26",
-    slug: "block-26",
-    name: "Block 26 (School of Bioengineering & Biosciences)",
-    shortName: "Block 26",
-    type: "academic",
+     id: "block-26",
+  slug: "block-26",
+  name: "Block 26 (School of Computer Science and Engineering)",
+  shortName: "Block 26 - Computer Science",
+  type: "academic",
+  description: "Academic facilities of the School of Computer Science and Engineering.",
     floors: 5,
     coordinates: { x: 76, y: 18 },
     accessibility: {
@@ -171,16 +171,16 @@ export const buildings = [
       tactilePath: false,
       brailleSignage: false
     },
-    description: "Genetics laboratories, microbiology clean-benches, bioinformatics suites, and tissue culture units.",
     barriers: ["Basement autoclave room lacks ramp access"],
     image: null
   },
   {
     id: "block-27",
-    slug: "block-27",
-    name: "Block 27 (Agricultural Polyhouses & Soil Labs)",
-    shortName: "Block 27",
-    type: "academic",
+  slug: "block-27",
+  name: "Block 27 (School of Computer Science and Engineering)",
+  shortName: "Block 27 - Computer Science",
+  type: "academic",
+  description: "Academic facilities of the School of Computer Science and Engineering.",
     floors: 2,
     coordinates: { x: 86, y: 22 },
     accessibility: {
@@ -193,16 +193,16 @@ export const buildings = [
       tactilePath: false,
       brailleSignage: false
     },
-    description: "Agronomy research fields, climate-controlled polyhouses, and soil microbiology stations.",
     barriers: ["Unpaved earthen pathways between polyhouses", "High mud kerbs around sprinkler perimeter"],
     image: null
   },
   {
-    id: "block-28",
-    slug: "block-28",
-    name: "Block 28 (School of Agriculture)",
-    shortName: "Block 28",
-    type: "academic",
+     id: "block-28",
+  slug: "block-28",
+  name: "Block 28 (School of Computer Science and Engineering)",
+  shortName: "Block 28 - Computer Science",
+  type: "academic",
+  description: "Academic facilities of the School of Computer Science and Engineering.",
     floors: 4,
     coordinates: { x: 82, y: 28 },
     accessibility: {
@@ -215,16 +215,16 @@ export const buildings = [
       tactilePath: false,
       brailleSignage: false
     },
-    description: "Horticulture seminar halls, entomology specimen galleries, and agricultural extension offices.",
     barriers: ["South entrance ramp has uneven stone tiles"],
     image: null
   },
   {
-    id: "block-29",
-    slug: "block-29",
-    name: "Block 29 (Chemical Sciences & Physics)",
-    shortName: "Block 29",
-    type: "academic",
+   id: "block-29",
+  slug: "block-29",
+  name: "Block 29 (Chancellory Building)",
+  shortName: "Block 29 - Chancellory",
+  type: "administrative",
+  description: "Administrative facilities of the Chancellory.",
     floors: 5,
     coordinates: { x: 62, y: 22 },
     accessibility: {
@@ -237,16 +237,16 @@ export const buildings = [
       tactilePath: false,
       brailleSignage: false
     },
-    description: "Organic synthesis hoods, spectroscopy instrumentation rooms, and undergraduate optics labs.",
     barriers: ["Lab benches fixed at 36-inch height without adjustable stations"],
     image: null
   },
   {
     id: "block-30",
-    slug: "block-30",
-    name: "Block 30 (Department of Mathematics & Basic Sciences)",
-    shortName: "Block 30 (Maths)",
-    type: "academic",
+  slug: "block-30",
+  name: "Block 30 (Chancellory Building)",
+  shortName: "Block 30 - Chancellory",
+  type: "administrative",
+  description: "Administrative facilities of the Chancellory.",
     floors: 4,
     coordinates: { x: 50, y: 24 },
     accessibility: {
@@ -259,16 +259,16 @@ export const buildings = [
       tactilePath: false,
       brailleSignage: false
     },
-    description: "Department of Mathematics, Statistics, Physics lecture rooms, and foundational engineering science laboratories.",
     barriers: ["Threshold step at north annex entrance"],
     image: null
   },
   {
     id: "block-31",
-    slug: "block-31",
-    name: "Block 31 (School of Polytechnic)",
-    shortName: "Block 31",
-    type: "academic",
+  slug: "block-31",
+  name: "Block 31 (Admission Block)",
+  shortName: "Block 31 - Admission",
+  type: "administrative",
+  description: "University admission and student enquiry facilities.",
     floors: 4,
     coordinates: { x: 38, y: 24 },
     accessibility: {
@@ -281,16 +281,16 @@ export const buildings = [
       tactilePath: false,
       brailleSignage: false
     },
-    description: "Diploma engineering lectures, technical drawing studios, and electronics hardware workstations.",
     barriers: ["Staircase handrail loose on third floor flight"],
     image: null
   },
   {
     id: "block-32",
-    slug: "block-32",
-    name: "Block 32 (Division of Student Welfare - DSW & Business)",
-    shortName: "Block 32 (DSW & Business)",
-    type: "administrative",
+  slug: "block-32",
+  name: "Block 32 (Division of Student Relationship - DSR)",
+  shortName: "Block 32 - DSR",
+  type: "administrative",
+  description: "Facilities of the Division of Student Relationship (DSR).",
     floors: 5,
     coordinates: { x: 38, y: 34 },
     accessibility: {
@@ -303,16 +303,16 @@ export const buildings = [
       tactilePath: true,
       brailleSignage: true
     },
-    description: "Primary student welfare hub housing DSW, student council desks, scholarship counters, international affairs, mentoring cells, and Mittal School of Business.",
     barriers: ["Heavy foot traffic near elevator bank during lunch hours"],
     image: null
   },
   {
-    id: "block-33",
-    slug: "block-33",
-    name: "Block 33 (School of Hotel Management & Tourism)",
-    shortName: "Block 33 (Hotel Mgmt)",
-    type: "academic",
+     id: "block-33",
+  slug: "block-33",
+  name: "Block 33 (Computer Application)",
+  shortName: "Block 33 - Computer Application",
+  type: "academic",
+  description: "Academic facilities related to computer applications.",
     floors: 4,
     coordinates: { x: 28, y: 34 },
     accessibility: {
@@ -325,16 +325,16 @@ export const buildings = [
       tactilePath: false,
       brailleSignage: false
     },
-    description: "Training kitchens, bakery studios, mock hotel suites, and international beverage demo rooms.",
     barriers: ["Commercial training kitchen doors have raised floor sills"],
     image: null
   },
   {
-    id: "block-34",
-    slug: "block-34",
-    name: "Block 34 (School of Computer Science & Engineering)",
-    shortName: "Block 34 (CSE)",
-    type: "academic",
+     id: "block-34",
+  slug: "block-34",
+  name: "Block 34 (Computer Science)",
+  shortName: "Block 34 - Computer Science",
+  type: "academic",
+  description: "Academic facilities related to computer science.",
     floors: 8,
     coordinates: { x: 48, y: 36 },
     accessibility: {
@@ -347,7 +347,6 @@ export const buildings = [
       tactilePath: true,
       brailleSignage: true
     },
-    description: "Primary hub for CSE/IT students, advanced computing clusters, data science labs, and smart seminar halls.",
     barriers: ["Elevators experience heavy crowding during 10-minute class transitions"],
     image: null
   },
@@ -369,16 +368,16 @@ export const buildings = [
       tactilePath: false,
       brailleSignage: false
     },
-    description: "Drafting studios, architectural modeling workshops, laser cutting suites, and urban design display halls.",
     barriers: ["Exhibition mezzanine level accessible only via spiral steps"],
     image: null
   },
   {
-    id: "block-36",
-    slug: "block-36",
-    name: "Block 36 (School of Law)",
-    shortName: "Block 36 (Law)",
-    type: "academic",
+     id: "block-36",
+  slug: "block-36",
+  name: "Block 36 (Electronic Telecom)",
+  shortName: "Block 36 - Electronic Telecom",
+  type: "academic",
+  description: "Academic facilities related to electronics and telecommunications.",
     floors: 5,
     coordinates: { x: 68, y: 35 },
     accessibility: {
@@ -391,16 +390,16 @@ export const buildings = [
       tactilePath: true,
       brailleSignage: false
     },
-    description: "Moot court arenas, legal aid clinic, jurisprudence research library, and faculty chambers.",
     barriers: ["Moot court judge podium is elevated by 2 steps without ramp"],
     image: null
   },
   {
     id: "block-37",
-    slug: "block-37",
-    name: "Block 37 (Central Library)",
-    shortName: "Central Library (B37)",
-    type: "library",
+  slug: "block-37",
+  name: "Block 37 (Central Library)",
+  shortName: "Block 37 - Central Library",
+  type: "library",
+  description: "Central library facilities for students and staff.",
     floors: 5,
     coordinates: { x: 74, y: 38 },
     accessibility: {
@@ -413,16 +412,16 @@ export const buildings = [
       tactilePath: true,
       brailleSignage: true
     },
-    description: "Iconic multi-story central university library, quiet reading zones, digital reference terminals, and audio-book facilities.",
     barriers: ["Side ramp near garden has 1:8 steep gradient"],
     image: null
   },
   {
     id: "block-38",
-    slug: "block-38",
-    name: "Block 38 (Computer Applications & Research Labs)",
-    shortName: "Block 38 (Research & MCA)",
-    type: "academic",
+  slug: "block-38",
+  name: "Block 38 (Computer Applications & Research Labs)",
+  shortName: "Block 38",
+  type: "academic",
+  description: "Computer applications and research laboratory facilities.",
     floors: 4,
     coordinates: { x: 82, y: 40 },
     accessibility: {
@@ -435,7 +434,6 @@ export const buildings = [
       tactilePath: true,
       brailleSignage: false
     },
-    description: "Advanced computing laboratories, Centre for Research Degree Programmes (Ph.D.), artificial intelligence research clusters, and postgraduate computing studios.",
     barriers: ["Heavy security turnstiles at ground floor lobby"],
     image: null
   },
@@ -457,16 +455,17 @@ export const buildings = [
       tactilePath: true,
       brailleSignage: true
     },
-    description: "Newly constructed computing hub with automatic motion-sensing doors, wide elevators, and step-free lecture complexes.",
     barriers: [],
     image: null
   },
   {
-    id: "block-56",
-    slug: "block-56",
-    name: "Block 56 (Liberal Arts & Foreign Languages)",
-    shortName: "Block 56",
-    type: "academic",
+      id: "block-56",
+  slug: "block-56",
+  name: "Block 56 (Mechanical)",
+  shortName: "Block 56 - Mechanical",
+  type: "academic",
+  description: "Academic and laboratory facilities related to mechanical engineering."
+,
     floors: 5,
     coordinates: { x: 54, y: 44 },
     accessibility: {
@@ -479,7 +478,6 @@ export const buildings = [
       tactilePath: true,
       brailleSignage: false
     },
-    description: "Language training labs, foreign language cultural centers, media broadcast studios, and creative writing rooms.",
     barriers: ["Soundproofing heavy double doors at recording studio"],
     image: null
   },

@@ -1,7 +1,76 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/components/AccessibilityScore": [
+        "./src/app/(frontend)/(module-3)/components/AccessibilityScore"
+      ],
+      "@/components/BuildingCard": [
+        "./src/app/(frontend)/(module-2)/components/BuildingCard"
+      ],
+      "@/components/BuildingChecklist": [
+        "./src/app/(frontend)/(module-3)/components/BuildingChecklist"
+      ],
+      "@/components/BuildingCommunityReports": [
+        "./src/app/(frontend)/(module-3)/components/BuildingCommunityReports"
+      ],
+      "@/components/Campus360Viewer": [
+        "./src/app/(frontend)/(module-1)/components/Campus360Viewer"
+      ],
+      "@/components/CampusMap": [
+        "./src/app/(frontend)/(module-2)/components/CampusMap"
+      ],
+      "@/components/DashboardRecentAlerts": [
+        "./src/app/(frontend)/(module-3)/components/DashboardRecentAlerts"
+      ],
+      "@/components/FeedPost": [
+        "./src/app/(frontend)/(module-3)/components/FeedPost"
+      ],
+      "@/components/Footer": [
+        "./src/app/(frontend)/(module-1)/components/Footer"
+      ],
+      "@/components/GoogleSignInModal": [
+        "./src/app/(frontend)/(module-1)/components/GoogleSignInModal"
+      ],
+      "@/components/HeroSection": [
+        "./src/app/(frontend)/(module-1)/components/HeroSection"
+      ],
+      "@/components/Navbar": [
+        "./src/app/(frontend)/(module-1)/components/Navbar"
+      ],
+      "@/components/RouteCard": [
+        "./src/app/(frontend)/(module-2)/components/RouteCard"
+      ],
+      "@/components/StatusBadge": [
+        "./src/app/(frontend)/(module-1)/components/StatusBadge"
+      ],
+      "@/lib/auth": [
+        "./src/app/backend/module-1/auth"
+      ],
+      "@/lib/campusData": [
+        "./src/app/backend/module-2/campusData"
+      ],
+      "@/lib/pathfinding": [
+        "./src/app/backend/module-1/pathfinding"
+      ],
+      "@/lib/reportsStorage": [
+        "./src/app/backend/module-3/reportsStorage"
+      ],
+      "@/lib/utils": [
+        "./src/app/backend/module-2/utils"
+      ],
+      "@/*": [
+        "./src/*"
+      ],
+      "@/lib/campusScoreSummary": [
+        "./src/app/backend/module-3/campusScoreSummary"
+      ],
+      "@/lib/reportService": [
+        "./src/app/backend/module-3/reportService"
+      ],
+      "@/lib/reportValidation": [
+        "./src/app/backend/module-3/reportValidation"
+      ]
     }
   }
 }

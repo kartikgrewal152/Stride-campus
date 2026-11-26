@@ -523,9 +523,9 @@ export default function ProfilePage() {
                       <span>⚙️ Backend & Algorithms:</span>
                     </div>
                     <ul className="text-slate-600 space-y-1 text-[11px] list-disc list-inside">
-                      <li>Core Dijkstra Shortest-Path Algorithm (`src/lib/pathfinding.js`)</li>
+                      <li>Core Dijkstra Shortest-Path Algorithm (`src/app/backend/module-1/pathfinding.js`)</li>
                       <li>Dynamic Routing REST API (`/api/routes`)</li>
-                      <li>Google OAuth Session Management & Event Bus (`src/lib/auth.js`)</li>
+                      <li>Google OAuth Session Management & Event Bus (`src/app/backend/module-1/auth.js`)</li>
                     </ul>
                   </div>
                 </div>
@@ -564,7 +564,7 @@ export default function ProfilePage() {
                     </div>
                     <ul className="text-slate-600 space-y-1 text-[11px] list-disc list-inside">
                       <li>52-Block Graph Network & Corridor Modeling (`campusData.js`)</li>
-                      <li>Spatial Distance & Surface Friction Calculator (`src/lib/utils.js`)</li>
+                      <li>Spatial Distance & Surface Friction Calculator (`src/app/backend/module-2/utils.js`)</li>
                       <li>Facility Registry REST API (`/api/buildings`)</li>
                     </ul>
                   </div>
@@ -603,9 +603,9 @@ export default function ProfilePage() {
                       <span>⚙️ Backend & Algorithms:</span>
                     </div>
                     <ul className="text-slate-600 space-y-1 text-[11px] list-disc list-inside">
-                      <li>Persistent Storage Event Bus (`reportsStorage.js`)</li>
+                      <li>Persistent Storage Event Bus (`src/app/backend/module-3/reportsStorage.js`)</li>
                       <li>Barrier Ingestion & Queue REST API (`/api/reports`)</li>
-                      <li>Institutional Compliance Scoring Math (4-Factor Model)</li>
+                      <li>Institutional Accessibility Score Summary (average, score bands, priority order)</li>
                     </ul>
                   </div>
                 </div>
