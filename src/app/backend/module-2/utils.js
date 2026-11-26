@@ -92,7 +92,6 @@ export function getBuildingImage(building) {
     "unimall": "/lpu_photos/lpu-campus-3.jpg",
     "unipolis": "/lpu_photos/lpu-campus-5.jpg",
     "shanti-devi-auditorium": "/lpu_photos/lpu-campus-8.jpg",
-    "uni-hospital": "/lpu_photos/lpu-campus-3.jpg",
     "indoor-stadium": "/lpu_photos/lpu-campus-10.jpg",
     "outdoor-stadium": "/lpu_photos/lpu-campus-11.jpg",
     "sunken-garden": "/lpu_photos/lpu-campus-7.jpg",

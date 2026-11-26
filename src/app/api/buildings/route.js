@@ -1,6 +1,5 @@
-import { NextResponse } from "next/server"
-import { buildings } from "@/lib/campusData"
+import { getCampusBuildingsResponse } from "@/lib/campusMapApi"
 
 export async function GET() {
-  return NextResponse.json(buildings)
+  return getCampusBuildingsResponse()
 }

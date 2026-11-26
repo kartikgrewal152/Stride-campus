@@ -1,3 +1,3 @@
-# Module 2 Backend – Campus Data and Utilities
+# Module 2 Backend – Campus Map and Facilities
 
-Owns the campus facility registry, graph connections, route edges and shared distance/score formatting helpers. `/api/buildings` exposes facility records; Module 1's pathfinding logic consumes the graph data.
+Owns the campus facility registry, graph connections, pathfinding, map API logic, and shared distance/score formatting helpers. The `/api/buildings` and `/api/routes` Next.js entrypoints delegate their map logic here.

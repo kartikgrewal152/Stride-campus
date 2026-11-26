@@ -100,11 +100,12 @@ export default function GoogleSignInModal({ isOpen, onClose, onLoginSuccess }) {
                   className="w-full flex items-center justify-between p-3.5 rounded-2xl border border-slate-200 hover:border-violet-400 hover:bg-violet-50/50 transition-all text-left cursor-pointer group disabled:opacity-50"
                 >
                   <div className="flex items-center gap-3 min-w-0">
-                    <img
-                      src={account.avatar}
-                      alt={account.name}
-                      className="w-10 h-10 rounded-full object-cover border border-slate-200 shrink-0"
-                    />
+                    <div
+                      aria-hidden="true"
+                      className="w-10 h-10 rounded-full bg-violet-100 text-violet-700 border border-violet-200 shrink-0 flex items-center justify-center text-sm font-black"
+                    >
+                      {account.name.trim().charAt(0).toUpperCase()}
+                    </div>
                     <div className="min-w-0">
                       <div className="text-sm font-bold text-slate-900 group-hover:text-violet-700 transition-colors flex items-center gap-1.5">
                         <span>{account.name}</span>

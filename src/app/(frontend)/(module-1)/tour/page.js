@@ -15,7 +15,7 @@ export default function TourPage() {
     { id: "unimall", name: "UniMall Central Atrium", type: "Utility & Food Hub", status: "Elevators Active" },
     { id: "block-30", name: "Block 30 (Central Library)", type: "Reference Resource", status: "Tactile Pathways" },
     { id: "unipolis", name: "Baldev Raj Mittal Unipolis", type: "Convocation Ground", status: "Wheelchair Deck" },
-    { id: "uni-hospital", name: "Uni-Hospital Health Centre", type: "Emergency Wing", status: "100% Step-Free" },
+    { id: "block-3", name: "Uni-Hospital Health Centre", type: "Emergency Wing", status: "100% Step-Free" },
     { id: "gate-1", name: "Main Gate 1 (GT Road)", type: "Highway Entrance", status: "E-Bus Terminal" },
     { id: "indoor-sports", name: "Indoor Sports Complex", type: "Recreation & Pool", status: "Spectator Ramps" },
     { id: "bh-1", name: "Boys Hostel 1 (BH-1)", type: "Residential Quad", status: "Ground Floor Accessible" },

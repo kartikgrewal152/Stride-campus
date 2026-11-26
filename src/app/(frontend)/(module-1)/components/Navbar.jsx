@@ -74,11 +74,12 @@ export default function Navbar() {
                   href="/profile"
                   className="flex items-center gap-2.5 px-3 py-1.5 rounded-xl border border-slate-200 hover:border-violet-300 bg-slate-50 hover:bg-white transition-all group"
                 >
-                  <img
-                    src={user.avatar || "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=256&q=80"}
-                    alt={user.name}
-                    className="w-7 h-7 rounded-full object-cover border border-slate-300"
-                  />
+                  <span
+                    aria-hidden="true"
+                    className="w-7 h-7 rounded-full bg-violet-100 text-violet-700 border border-violet-200 flex items-center justify-center text-xs font-black"
+                  >
+                    {user.name?.trim()?.charAt(0)?.toUpperCase() || "S"}
+                  </span>
                   <div className="flex flex-col text-left">
                     <span className="text-xs font-black text-slate-800 leading-tight group-hover:text-violet-700 transition-colors">
                       {user.name}

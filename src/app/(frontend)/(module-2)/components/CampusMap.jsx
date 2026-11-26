@@ -7,14 +7,33 @@
 
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { buildings, routes } from "@/lib/campusData"
+import { getStoredReports } from "@/lib/reportsStorage"
 import { ShieldCheck, AlertTriangle, Layers, Navigation, ZoomIn, ZoomOut, RotateCcw, Satellite, MapPin } from "lucide-react"
+
+// Hide only project nodes that are clearly absent from the user's campus sketch.
+const undrawnNodeIds = new Set([
+  "block-35", "unipolis", "sunken-garden", "open-air-theatre", "gate-4",
+  "faculty-apt-a", "outdoor-stadium", "indoor-stadium", "gate-3", "bh-7", "bh-8",
+])
 
 export default function CampusMap({ selectedBuilding, onBuildingSelect, highlightedPath }) {
   const [hoveredBuilding, setHoveredBuilding] = useState(null)
+  const [reports, setReports] = useState([])
   const [filterType, setFilterType] = useState("all")
   const [mapMode, setMapMode] = useState("network")
+
+  useEffect(() => {
+    const loadReports = () => setReports(getStoredReports())
+    loadReports()
+    window.addEventListener("stride:report_added", loadReports)
+    window.addEventListener("storage", loadReports)
+    return () => {
+      window.removeEventListener("stride:report_added", loadReports)
+      window.removeEventListener("storage", loadReports)
+    }
+  }, [])
 
   const isOnPath = (buildingId) => {
     if (!highlightedPath || !highlightedPath.path) return false
@@ -36,6 +55,11 @@ export default function CampusMap({ selectedBuilding, onBuildingSelect, highligh
   const hovered = hoveredBuilding
     ? buildings.find(b => b.id === hoveredBuilding)
     : null
+  const hasBrokenRampReport = hovered && reports.some(report =>
+    report.buildingId === hovered.id &&
+    (report.barrierType === "broken-ramp" || report.barrierType === "ramp") &&
+    report.status !== "resolved"
+  )
 
   const getBuildingLabel = (b) => {
     if (b.id.startsWith("block-")) return `B${b.id.replace("block-", "")}`
@@ -44,7 +68,7 @@ export default function CampusMap({ selectedBuilding, onBuildingSelect, highligh
     if (b.id === "unimall") return "MALL"
     if (b.id === "unipolis") return "UNIP"
     if (b.id === "shanti-devi-auditorium") return "AUD"
-    if (b.id === "uni-hospital") return "HOSP"
+    if (b.id === "block-3") return "HOSP"
     if (b.id === "indoor-stadium") return "STAD"
     if (b.id === "outdoor-stadium") return "TURF"
     if (b.id === "sunken-garden") return "GARD"
@@ -61,8 +85,14 @@ export default function CampusMap({ selectedBuilding, onBuildingSelect, highligh
   }
 
   const filteredBuildings = filterType === "all"
-    ? buildings
-    : buildings.filter(b => b.type === filterType)
+    ? buildings.filter(b => !undrawnNodeIds.has(b.id))
+    : buildings.filter(b => !undrawnNodeIds.has(b.id) && b.type === filterType)
+  const visibleNodeIds = new Set(filteredBuildings.map(building => building.id))
+  const mapRoutes = routes.filter(route => visibleNodeIds.has(route.from) && visibleNodeIds.has(route.to))
+  const getMapCoordinates = (building) => ({
+    x: Math.min(99, Math.max(3, building.coordinates.x)),
+    y: Math.min(79, Math.max(3, building.coordinates.y)),
+  })
 
   return (
     <div className="relative w-full rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 shadow-2xl select-none flex flex-col">
@@ -166,10 +196,12 @@ export default function CampusMap({ selectedBuilding, onBuildingSelect, highligh
           <rect x="49" y="1" width="2" height="80" fill="rgba(255, 255, 255, 0.02)" rx="1" />
           <rect x="1" y="39" width="100" height="2" fill="rgba(255, 255, 255, 0.02)" rx="1" />
 
-          {routes.map((route, idx) => {
+          {mapRoutes.map((route, idx) => {
             const fromB = buildings.find(b => b.id === route.from)
             const toB = buildings.find(b => b.id === route.to)
             if (!fromB || !toB) return null
+            const from = getMapCoordinates(fromB)
+            const to = getMapCoordinates(toB)
 
             const onPath = isRouteOnPath(route.from, route.to)
 
@@ -177,10 +209,10 @@ export default function CampusMap({ selectedBuilding, onBuildingSelect, highligh
               <g key={idx}>
                 {onPath && (
                   <line
-                    x1={fromB.coordinates.x}
-                    y1={fromB.coordinates.y}
-                    x2={toB.coordinates.x}
-                    y2={toB.coordinates.y}
+                    x1={from.x}
+                    y1={from.y}
+                    x2={to.x}
+                    y2={to.y}
                     stroke="url(#activeGrad)"
                     strokeWidth="1.6"
                     strokeLinecap="round"
@@ -188,10 +220,10 @@ export default function CampusMap({ selectedBuilding, onBuildingSelect, highligh
                   />
                 )}
                 <line
-                  x1={fromB.coordinates.x}
-                  y1={fromB.coordinates.y}
-                  x2={toB.coordinates.x}
-                  y2={toB.coordinates.y}
+                  x1={from.x}
+                  y1={from.y}
+                  x2={to.x}
+                  y2={to.y}
                   stroke={
                     onPath
                       ? "#FFFFFF"
@@ -208,11 +240,12 @@ export default function CampusMap({ selectedBuilding, onBuildingSelect, highligh
             )
           })}
 
-          {buildings.map(building => {
+          {filteredBuildings.map(building => {
             const isSelected = selectedBuilding === building.id
             const isHovered = hoveredBuilding === building.id
             const onPath = isOnPath(building.id)
             const active = isSelected || isHovered || onPath
+            const coordinates = getMapCoordinates(building)
 
             const matchesFilter = filterType === "all" || building.type === filterType
             const opacity = matchesFilter ? (active ? 1 : 0.85) : 0.25
@@ -227,7 +260,7 @@ export default function CampusMap({ selectedBuilding, onBuildingSelect, highligh
             return (
               <g
                 key={building.id}
-                transform={`translate(${building.coordinates.x}, ${building.coordinates.y})`}
+                transform={`translate(${coordinates.x}, ${coordinates.y})`}
                 className="cursor-pointer transition-all duration-200"
                 opacity={opacity}
                 onClick={() => onBuildingSelect && onBuildingSelect(building.id)}
@@ -278,8 +311,8 @@ export default function CampusMap({ selectedBuilding, onBuildingSelect, highligh
           <div
             className="absolute z-30 pointer-events-none transition-all duration-150"
             style={{
-              left: `${hovered.coordinates.x}%`,
-              top: `${hovered.coordinates.y - 3}%`,
+              left: `${getMapCoordinates(hovered).x}%`,
+              top: `${getMapCoordinates(hovered).y - 3}%`,
               transform: "translate(-50%, -100%)"
             }}
           >
@@ -307,9 +340,13 @@ export default function CampusMap({ selectedBuilding, onBuildingSelect, highligh
                     {hovered.accessibility.elevatorWorking ? "Lift OK" : "Lift Broken"}
                   </span>
                 )}
-                {hovered.accessibility.ramp && (
-                  <span className="px-1.5 py-0.5 rounded bg-violet-950 text-violet-300">
-                    Ramp ✓
+                {(hovered.accessibility.ramp || hasBrokenRampReport) && (
+                  <span className={`px-1.5 py-0.5 rounded ${
+                    hasBrokenRampReport
+                      ? "bg-red-950 text-red-300"
+                      : "bg-violet-950 text-violet-300"
+                  }`}>
+                    {hasBrokenRampReport ? "Ramp Reported Broken" : "Ramp ✓"}
                   </span>
                 )}
                 {hovered.accessibility.accessibleWashroom && (

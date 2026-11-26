@@ -15,7 +15,7 @@
         "./src/app/(frontend)/(module-3)/components/BuildingCommunityReports"
       ],
       "@/components/Campus360Viewer": [
-        "./src/app/(frontend)/(module-1)/components/Campus360Viewer"
+        "./src/app/(frontend)/(module-2)/components/Campus360Viewer"
       ],
       "@/components/CampusMap": [
         "./src/app/(frontend)/(module-2)/components/CampusMap"
@@ -50,8 +50,11 @@
       "@/lib/campusData": [
         "./src/app/backend/module-2/campusData"
       ],
+      "@/lib/campusMapApi": [
+        "./src/app/backend/module-2/campusMapApi"
+      ],
       "@/lib/pathfinding": [
-        "./src/app/backend/module-1/pathfinding"
+        "./src/app/backend/module-2/pathfinding"
       ],
       "@/lib/reportsStorage": [
         "./src/app/backend/module-3/reportsStorage"

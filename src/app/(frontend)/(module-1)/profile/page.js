@@ -197,12 +197,10 @@ export default function ProfilePage() {
 
               {/* Photo & Key Information */}
               <div className="flex items-center gap-4">
-                <div className="relative w-20 h-24 rounded-2xl overflow-hidden bg-slate-800 border-2 border-white/20 shrink-0 shadow-lg">
-                  <img
-                    src={user?.avatar || "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=256&q=80"}
-                    alt={user?.name || "Student"}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="relative w-20 h-24 rounded-2xl overflow-hidden bg-gradient-to-br from-violet-600 to-indigo-800 border-2 border-white/20 shrink-0 shadow-lg flex items-center justify-center">
+                  <span className="text-3xl font-black text-white" aria-hidden="true">
+                    {user?.name?.trim()?.charAt(0)?.toUpperCase() || "S"}
+                  </span>
                   <div className="absolute bottom-0 inset-x-0 bg-emerald-500 text-slate-950 text-[8px] font-black uppercase text-center py-0.5">
                     VERIFIED
                   </div>
@@ -472,147 +470,6 @@ export default function ProfilePage() {
           </div>
         </div>
 
-        {/* ROW 4: ENGINEERING TEAM & SUBSYSTEM FULL-STACK OWNERSHIP */}
-        <div className="bg-white rounded-3xl border border-slate-200/90 shadow-sm p-6 sm:p-8 space-y-6">
-          <div className="flex items-center justify-between pb-4 border-b border-slate-100 flex-wrap gap-2">
-            <div>
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-violet-100 text-violet-800 text-[10px] font-extrabold uppercase tracking-wider mb-1">
-                <span>Capstone Engineering Division</span>
-              </div>
-              <h2 className="text-lg font-black text-slate-900 leading-none">
-                Engineering Team & Full-Stack Contribution Architecture
-              </h2>
-              <span className="text-xs text-slate-500 mt-1 block">
-                Balanced division of responsibility across frontend and backend modules for Lovely Professional University
-              </span>
-            </div>
-            <span className="text-xs font-bold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-md">
-              3 Teammates • Full-Stack Ownership
-            </span>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* 1. PRAVESH (LEAD) */}
-            <div className="rounded-2xl border-2 border-violet-500/40 bg-gradient-to-b from-violet-50/50 to-white p-5 space-y-4 shadow-sm flex flex-col justify-between">
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase bg-violet-600 text-white">
-                    Team Lead
-                  </span>
-                  <span className="text-xs font-mono font-bold text-violet-700">12419500</span>
-                </div>
-                <div>
-                  <h3 className="text-base font-black text-slate-900">Pravesh</h3>
-                  <p className="text-xs font-bold text-violet-600">Core Engine Architect</p>
-                </div>
-
-                <div className="space-y-2 text-xs pt-2 border-t border-violet-100">
-                  <div>
-                    <div className="font-extrabold text-slate-900 flex items-center gap-1 text-[11px] uppercase tracking-wider text-teal-700 mb-1">
-                      <span>🎨 Frontend Modules:</span>
-                    </div>
-                    <ul className="text-slate-600 space-y-1 text-[11px] list-disc list-inside">
-                      <li>360° VR Tour & Panorama Engine (`Campus360Viewer.jsx`, `/tour`)</li>
-                      <li>Google OAuth 2.0 Modal & Profile System (`GoogleSignInModal.jsx`, `/profile`)</li>
-                      <li>Hero Route Simulation & Global Navigation (`HeroSection.jsx`)</li>
-                    </ul>
-                  </div>
-
-                  <div className="pt-2">
-                    <div className="font-extrabold text-slate-900 flex items-center gap-1 text-[11px] uppercase tracking-wider text-violet-700 mb-1">
-                      <span>⚙️ Backend & Algorithms:</span>
-                    </div>
-                    <ul className="text-slate-600 space-y-1 text-[11px] list-disc list-inside">
-                      <li>Core Dijkstra Shortest-Path Algorithm (`src/app/backend/module-1/pathfinding.js`)</li>
-                      <li>Dynamic Routing REST API (`/api/routes`)</li>
-                      <li>Google OAuth Session Management & Event Bus (`src/app/backend/module-1/auth.js`)</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* 2. KARTIK GREWAL */}
-            <div className="rounded-2xl border border-slate-200 bg-white p-5 space-y-4 shadow-xs flex flex-col justify-between">
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase bg-slate-800 text-white">
-                    Geospatial Lead
-                  </span>
-                  <span className="text-xs font-mono font-bold text-slate-600">12406604</span>
-                </div>
-                <div>
-                  <h3 className="text-base font-black text-slate-900">Kartik Grewal</h3>
-                  <p className="text-xs font-bold text-slate-600">Mapping & Network Lead</p>
-                </div>
-
-                <div className="space-y-2 text-xs pt-2 border-t border-slate-100">
-                  <div>
-                    <div className="font-extrabold text-slate-900 flex items-center gap-1 text-[11px] uppercase tracking-wider text-teal-700 mb-1">
-                      <span>🎨 Frontend Modules:</span>
-                    </div>
-                    <ul className="text-slate-600 space-y-1 text-[11px] list-disc list-inside">
-                      <li>2D Interactive SVG Vector Campus Map (`CampusMap.jsx`, `/explore`)</li>
-                      <li>Step-by-Step Route Comparison HUD (`RouteCard.jsx`)</li>
-                      <li>Facility Directory Cards & Category Filters (`BuildingCard.jsx`)</li>
-                    </ul>
-                  </div>
-
-                  <div className="pt-2">
-                    <div className="font-extrabold text-slate-900 flex items-center gap-1 text-[11px] uppercase tracking-wider text-slate-700 mb-1">
-                      <span>⚙️ Backend & Algorithms:</span>
-                    </div>
-                    <ul className="text-slate-600 space-y-1 text-[11px] list-disc list-inside">
-                      <li>52-Block Graph Network & Corridor Modeling (`campusData.js`)</li>
-                      <li>Spatial Distance & Surface Friction Calculator (`src/app/backend/module-2/utils.js`)</li>
-                      <li>Facility Registry REST API (`/api/buildings`)</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* 3. KONATALA NAVEEN */}
-            <div className="rounded-2xl border border-slate-200 bg-white p-5 space-y-4 shadow-xs flex flex-col justify-between">
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase bg-slate-800 text-white">
-                    Audit Lead
-                  </span>
-                  <span className="text-xs font-mono font-bold text-slate-600">12417251</span>
-                </div>
-                <div>
-                  <h3 className="text-base font-black text-slate-900">Konatala Naveen</h3>
-                  <p className="text-xs font-bold text-slate-600">Full-Stack & Community Lead</p>
-                </div>
-
-                <div className="space-y-2 text-xs pt-2 border-t border-slate-100">
-                  <div>
-                    <div className="font-extrabold text-slate-900 flex items-center gap-1 text-[11px] uppercase tracking-wider text-teal-700 mb-1">
-                      <span>🎨 Frontend Modules:</span>
-                    </div>
-                    <ul className="text-slate-600 space-y-1 text-[11px] list-disc list-inside">
-                      <li>Barrier Reporting Form with 5MB Photo Upload (`/report`)</li>
-                      <li>Student Live Wire Community Feed (`FeedPost.jsx`, `/feed`)</li>
-                      <li>Dynamic 2-Lift Checklist & Photo Proofs (`BuildingChecklist.jsx`)</li>
-                    </ul>
-                  </div>
-
-                  <div className="pt-2">
-                    <div className="font-extrabold text-slate-900 flex items-center gap-1 text-[11px] uppercase tracking-wider text-slate-700 mb-1">
-                      <span>⚙️ Backend & Algorithms:</span>
-                    </div>
-                    <ul className="text-slate-600 space-y-1 text-[11px] list-disc list-inside">
-                      <li>Persistent Storage Event Bus (`src/app/backend/module-3/reportsStorage.js`)</li>
-                      <li>Barrier Ingestion & Queue REST API (`/api/reports`)</li>
-                      <li>Institutional Accessibility Score Summary (average, score bands, priority order)</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
       </main>
 

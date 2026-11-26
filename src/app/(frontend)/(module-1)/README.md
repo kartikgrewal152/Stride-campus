@@ -1,3 +1,3 @@
-# Module 1 – Tour, Profile and Routing
+# Module 1 – Home, Tour Page and Profile
 
-Owns the home introduction and shared navigation, the `/tour` experience with the 360 viewer, and the `/profile` page with the sign-in modal. Backend helpers for authentication and shortest-path routing are in `src/app/backend/module-1/`; `/api/routes` is the module's Next.js API entrypoint.
+Owns the home introduction and shared navigation, the `/tour` page, and the `/profile` page with the sign-in modal. The shared 360 viewer component is owned by Frontend Module 2; authentication helpers are in Backend Module 1.
