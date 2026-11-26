@@ -150,7 +150,7 @@ export default function DashboardPage() {
                         <StatusBadge status={a.accessibleWashroom} label="Washroom" />
                       </div>
 
-                      {b.barriers.length > 0 && (
+                      {(b.barriers?.length ?? 0) > 0 && (
                         <div className="p-3 rounded-xl bg-amber-50 border border-amber-200/80 mb-4">
                           <div className="text-[11px] font-bold text-amber-900 mb-1 flex items-center gap-1.5">
                             <AlertCircle className="w-3.5 h-3.5 text-amber-600 shrink-0" />
